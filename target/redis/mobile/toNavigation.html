@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>趣友欢乐游戏_推广员代理个人中心_代理后台</title>
+<link rel="Shortcut Icon" href=../img/quyou.png>
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<meta name="description"
+	content="趣友欢乐游戏商户管理系统是提供给趣友平台代理充值房卡的后台登录网站。代理登陆趣友麻将代理后台后即可充值房卡。" />
+
+<meta name="keywords" content="趣友欢乐游戏代理后台" />
+
+<meta content="趣友欢乐游戏 www.***.com" name="author" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no" />
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="../css/mobile//bootstrap.min.css?t=20170928"
+	rel="stylesheet" type="text/css" />
+
+<link href="../css/mobile/bootstrap-responsive.min.css?t=20170928"
+	rel="stylesheet" type="text/css" />
+
+<link href="../css/mobile/font-awesome.min.css?t=20170928"
+	rel="stylesheet" type="text/css" />
+
+<link href="../css/mobile/style-metro.css?t=20170928" rel="stylesheet"
+	type="text/css" />
+
+<link href="../css/mobile/style.css?t=20170928" rel="stylesheet"
+	type="text/css" />
+
+<link href="../css/mobile/style-responsive.css?t=20170928"
+	rel="stylesheet" type="text/css" />
+
+<link href="../css/mobile/uniform.default.css?t=20170928"
+	rel="stylesheet" type="text/css" />
+<link href="../css/mobile/bootstrap-select.css?t=20170928"
+	rel="stylesheet" type="text/css" />
+
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="../css/mobile/chosen.css?t=20170928" rel="stylesheet"
+	type="text/css" />
+<link href="../css/mobile/select2_metro.css?t=20170928" rel="stylesheet"
+	type="text/css" />
+<link href="../css/mobile/DT_bootstrap.css?t=20170928" rel="stylesheet"
+	type="text/css" />
+<link href="../css/mobile/center.css?t=20171205" rel="stylesheet"
+	type="text/css" />
+
+<!-- END PAGE LEVEL STYLES -->
+
+<link rel="shortcut icon" href="../image/xianlai1.ico" />
+<script src="../js/mobile/My97DatePicker/WdatePicker.js"></script>
+<style>
+p {
+	margin: 0
+}
+
+body {
+	background-color: #e7eaf2;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.logo {
+	background-color: #30353d;
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+}
+
+.welcome {
+	color: #fff;
+}
+
+.main {
+	position: relative
+}
+
+.right_icon {
+	color: #808080
+}
+
+@media screen and (max-width: 415px) {
+	.main {
+		margin: 0 auto;
+		padding: 14px 0;
+		width: 100%
+	}
+	.welcome {
+		font-size: 17px;
+		margin-left: 5px;
+		vertical-align: middle;
+	}
+	.banner_icon {
+		width: 31%;
+		margin-left: 3%;
+		vertical-align: middle;
+	}
+	.center_container {
+		width: 100%;
+	}
+	.agent_info {
+		padding: 5% 6% 5% 5%;
+		font-size: 14px;
+	}
+	.info_title {
+		line-height: 25px;
+		font-size: 14px
+	}
+	.info_content {
+		font-size: 14px
+	}
+	.info_card {
+		font-size: 20px;
+		line-height: 24px
+	}
+	.nav_img {
+		width: 55.5%;
+		margin-bottom: 4%
+	}
+	.nav_icon {
+		margin-top: 4px
+	}
+	.nav_icon>a {
+		width: 27.3%;
+		margin: 9% 3%;
+	}
+	.nav_title {
+		font-size: 14px
+	}
+	.lamp {
+		background: #e7eaf2 url("../image/new_login/lamp.png") no-repeat 3% 49%/4.5%;
+		margin: 0 !important;
+		height: 30px;
+		line-height: 30px;
+		font-size: 14px;
+		padding-left: 40px;
+	}
+	.log_out {
+		top: 35%;
+		font-size: 16px
+	}
+	.tips {
+		height: 56px;
+		line-height: 56px;
+		padding: 0 12px 0 20px;
+		margin-top: 4px
+	}
+	.right_icon {
+		float: right;
+		line-height: 56px;
+	}
+}
+
+@media screen and (min-width: 415px) and (max-width: 809px) {
+	.main {
+		margin: 0 auto;
+		padding: 14px 0;
+		width: 100%
+	}
+	.welcome {
+		font-size: 24px;
+		margin-left: 10px;
+		vertical-align: middle;
+	}
+	.banner_icon {
+		width: 23%;
+		margin-left: 3%;
+		vertical-align: middle;
+	}
+	.center_container {
+		width: 100%;
+	}
+	.agent_info {
+		padding: 5% 6% 5% 5%;
+		font-size: 20px;
+	}
+	.info_title {
+		line-height: 25px;
+		font-size: 14px
+	}
+	.info_content {
+		font-size: 14px
+	}
+	.info_card {
+		font-size: 24px;
+		line-height: 28px
+	}
+	.nav_img {
+		width: 55.5%;
+		margin-bottom: 4%
+	}
+	.nav_icon {
+		margin-top: 8px
+	}
+	.nav_icon>a {
+		width: 27.3%;
+		margin: 5% 3%;
+	}
+	.nav_title {
+		font-size: 20px
+	}
+	.lamp {
+		background: #e7eaf2 url("../image/new_login/lamp.png") no-repeat 3% 49%/4.5%;
+		margin: 0 !important;
+		margin-top: 8px;
+		height: 36px;
+		line-height: 36px;
+		font-size: 18px;
+		padding-left: 50px;
+	}
+	.log_out {
+		top: 34%;
+		font-size: 18px
+	}
+	.tips {
+		height: 56px;
+		line-height: 56px;
+		padding: 0 12px 0 20px;
+		margin-top: 8px;
+		text-align: center;
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 810px) {
+	.main {
+		margin: 0 auto;
+		padding: 20px 0;
+		width: 801px
+	}
+	.welcome {
+		font-size: 24px;
+		margin-left: 20px;
+		vertical-align: middle;
+	}
+	.banner_icon {
+		width: 160px;
+		height: 32px;
+		vertical-align: middle;
+	}
+	.center_container {
+		width: 801px;
+	}
+	.agent_info {
+		padding: 28px 40px 28px 28px;
+		font-size: 14px;
+		margin-top: 8px
+	}
+	.info_title {
+		line-height: 25px;
+		font-size: 14px
+	}
+	.info_content {
+		font-size: 14px
+	}
+	.info_card {
+		font-size: 28px;
+		line-height: 28px
+	}
+	.nav_icon {
+		margin-top: 8px
+	}
+	.nav_img {
+		width: 76px;
+		margin-bottom: 10px
+	}
+	.nav_icon>a {
+		width: 227px;
+		margin: 42px 20px;
+	}
+	.nav_title {
+		font-size: 20px
+	}
+	.lamp {
+		background: #ffffff url("../image/new_login/lamp.png") no-repeat 3% 49%/2.5%;
+		height: 42px;
+		margin-top: 8px;
+		line-height: 42px;
+		font-size: 16px;
+		padding-left: 60px;
+	}
+	.log_out {
+		top: 35%;
+		font-size: 18px
+	}
+	.tips {
+		height: 56px;
+		line-height: 56px;
+		padding: 0 12px 0 20px;
+		margin-top: 8px;
+		text-align: center;
+		font-size: 16px;
+	}
+}
+
+.log_out {
+	color: #ffffff;
+	text-decoration: none;
+	position: absolute;
+	right: 2%;
+}
+
+.center_container {
+	margin: 0 auto;
+}
+
+.agent_info {
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+.info_content {
+	color: #808080;
+}
+
+.info_card {
+	color: #12b7ff;
+}
+/*跑马灯*/
+.lamp {
+	color: #808080;
+	display: none;
+}
+
+.nav_icon {
+	background-color: #ffffff;
+	font-size: 0
+}
+
+.nav_icon>a {
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.nav_title {
+	color: #000000
+}
+
+.tips {
+	background-color: #ffffff;
+	cursor: pointer
+}
+
+.first_msg {
+	color: #808080;
+	margin-left: 4px
+}
+</style>
+<style>
+.activity_detail {
+	height: auto;
+	margin: 9rem auto 0;
+	width: 90%;
+	background-size: contain;
+	position: relative;
+}
+
+.activity_bg_btn {
+	z-index: 0;
+}
+
+.activity_close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30%;
+	height: 20%;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.consumption_out {
+	cursor: pointer;
+}
+
+.consumption_info>span {
+	font-weight: normal;
+	color: #fdf802;
+	font-size: 16px;
+	vertical-align: bottom;
+}
+
+.consumption_left {
+	display: inline-block;
+	position: absolute;
+}
+
+.consumption_left p {
+	color: #ffffff;
+	font-weight: bold;
+	font-family: SimHei;
+	margin: 0;
+}
+
+.consumption_on p {
+	background: url("../image/activity/activity_choose.png") no-repeat 0 0/100%
+		100% !important;
+	text-shadow: 1px 1px 2px #fe8902 !important;
+}
+
+.consumption_on {
+	background-color: #fffde0;
+	border-radius: 9px 0 0 9px !important;
+}
+
+.consumption_right {
+	display: inline-block;
+	position: absolute;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+.consumption_tip {
+	margin-bottom: 7px;
+	font-weight: bold;
+}
+
+.consumption_tip img {
+	margin-right: 3px;
+	vertical-align: bottom;
+}
+
+.consumption_out p {
+	background: url("../image/activity/activity_unchoose.png") no-repeat 0 0/100%
+		100%;
+	text-shadow: 1px 1px 2px #15cfff;
+}
+
+@media screen and (max-device-width: 550px) {
+	.activity_detail {
+		width: 315px;
+	}
+	.consumption_right {
+		width: 194px;
+		height: 186px;
+		left: 95px;
+		margin-top: 59px;
+	}
+	.consumption_left {
+		left: 0;
+		width: 95px;
+		height: 193px;
+		padding-top: 52px;
+	}
+	.consumption_left p {
+		font-size: 12px;
+		height: 31px;
+		line-height: 31px;
+		margin: 0 3px;
+		text-align: left;
+		padding-left: 7px;
+	}
+	.consumption_out {
+		width: 97px;
+		height: 35px;
+		padding-top: 3px;
+		margin-left: 4px;
+		display: none;
+	}
+	.consumption_on {
+		margin-right: -10px;
+	}
+	.consumption_tip img {
+		height: 19px;
+	}
+	.consumption_tip {
+		font-size: 14px;
+		margin-bottom: 3px;
+	}
+	.activity_click {
+		text-align: center;
+	}
+	.activity_click img {
+		width: 80px;
+	}
+	.consumption_text {
+		font-size: 12px;
+		line-height: 19px;
+	}
+	.consumption_time {
+		font-size: 13px;
+	}
+}
+
+@media screen and (min-device-width: 551px) {
+	.activity_detail {
+		width: 455px;
+	}
+	.consumption_right {
+		width: 288px;
+		height: 282px;
+		left: 136px;
+		margin-top: 86px;
+	}
+	.consumption_left {
+		left: 0;
+		width: 136px;
+		height: 283px;
+		padding-top: 75px;
+	}
+	.consumption_left p {
+		font-size: 18px;
+		height: 40px;
+		line-height: 40px;
+		margin: 0 4px;
+		padding-left: 6px;
+	}
+	.consumption_out {
+		width: 137px;
+		height: 48px;
+		padding-top: 8px;
+		margin-left: 8px;
+	}
+	.consumption_on {
+		margin-right: -10px;
+	}
+	.consumption_tip img {
+		height: 22px;
+	}
+	.consumption_tip {
+		font-size: 19px;
+	}
+	.activity_click {
+		position: absolute;
+		bottom: 33px;
+		left: 101px;
+	}
+	.activity_click img {
+		width: 90px;
+	}
+	.consumption_text {
+		font-size: 16px;
+		line-height: 26px;
+	}
+	.consumption_time {
+		font-size: 17px;
+	}
+}
+
+#activity_center {
+	display: none
+}
+
+.activity_con {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%; top; 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 9991
+}
+/*客服*/
+#YSF-BTN-HOLDER {
+	display: none;
+	width: 0;
+	height: 0;
+}
+</style>
+</head>
+<div class="activity_con" id="consumption">
+	<div class="activity_detail">
+		<div class="activity_close" id="consumption_close"></div>
+		<div class="consumption_left" id="consumption_list"></div>
+		<div class="consumption_right" id="consumption_to">
+			<div class="consumption_tip">
+				<img src="../image/activity/activity_time.png" alt="">活动时间:
+			</div>
+			<div id="consumption_time" class="consumption_time"
+				style="color: #ef6615;font-weight:bold;border-bottom: 1px solid #e8e5cd;padding-bottom: 7px;margin-bottom: 6px"></div>
+			<div class="consumption_tip">
+				<img src="../image/activity/activity_warn.png" alt="">活动规则:
+			</div>
+			<div id="consumption_text" class="consumption_text"></div>
+			<div class="activity_click">
+				<img src="../image/activity/activity_go.png" alt="">
+			</div>
+		</div>
+		<img src="../image/activity/common_bg.png" alt=""
+			class="activity_bg_btn">
+	</div>
+</div>
+<div class="logo" id="logo">
+	<div class="main" style="">
+		<img class="banner_icon" src="../image/new_login/topic.png" alt="" />
+		<span class="welcome" style="">欢迎登录代理后台</span> <a class="log_out"
+			href="#" onclick="doLogout()"> 退出 </a>
+	</div>
+</div>
+<div class="center_container" id="center_container">
+	<div class="lamp" id="lamp">
+		<marquee onMouseOut="this.start()" onMouseOver="this.stop()"
+			behavior="scroll" id="marquee"></marquee>
+	</div>
+	<div class="agent_info">
+		<div id="selfInfo" class="fl" style="width: 78%">
+			<p class="info_title">
+				<span>ID:</span><span class="info_content" id="full-id-field"></span>
+			</p>
+			<p class="info_title">
+				<span>昵称:</span><span class="info_content" id="full-name-field"></span>
+			</p>
+			<p class="info_title">
+				<span>限时房卡:</span><span class="info_content" id="numof-card-field1"></span>(有效日期:
+				<span id="overplus-time"></span> )
+			</p>
+			<p class="info_title">
+				<span>永久房卡:</span><span class="info_content" id="numof-card-field2"></span>
+			</p>
+			<p id="bonus_info" class="info_title">
+				<span>积分:</span><span class="info_content" id="full-bonus-field"></span>
+				<i class="icon-money"></i>
+			</p>
+			<p id="add_person_num_info" class="info_title">
+				<span>新增人数:</span><span class="info_content" id="add_person_num"></span>
+			</p>
+			<p class="info_title">
+				<span>今日售卡:</span><span class="info_content" id="todayCount"></span>
+				<span>,昨日售卡:</span><span class="info_content" id="lastdayCount"></span>
+				<span>,上周售卡(之前七天):</span><span class="info_content" id="lastweekCount"></span>
+			</p>
+		</div>
+	</div>
+	<div class="nav_icon">
+		<a href="toFriendGiftCard.html?v=20180620"> <img class="nav_img"
+			src="../image/nav_center/toFriendGiftCard.png" alt=""/>
+			<div class="nav_title">添加房卡</div>
+		</a>
+		<a href="toBuyRecord.html"> <img class="nav_img"
+			src="../image/nav_center/toBuyRecord.png" alt=""/>
+			<div class="nav_title">购卡记录</div> 
+		<a href="toSellRecord.html"> <img
+				class="nav_img" src="../image/nav_center/toSellRecord.png" alt=""/>
+				<div class="nav_title">售卡记录</div>
+		</a>
+		 <a id="addProxy" href="toAddProxy.html"> <img class="nav_img"
+				src="../image/nav_center/toSystemReward.png" alt=""/>
+				<div class="nav_title">添加代理</div>
+		</a> <a id="myProxy" href="toMyAgent.html"> <img class="nav_img"
+				src="../image/nav_center/toMyAgent.png" alt=""/>
+				<div class="nav_title">我的代理</div>
+		</a> 
+		<a id="distribution" href="toDistribution.html"> <img class="nav_img"
+				src="../image/nav_center/toMyAgent.png" alt=""/>
+				<div class="nav_title">分销列表</div>
+		</a> 
+		<a id="distributionRecord" href="toDistRecord.html"> <img class="nav_img"
+				src="../image/nav_center/distRecord.png" alt=""/>
+				<div class="nav_title">分销记录</div>
+		</a> 
+		<a id="exchangeBonus" href="toExchangeBonus.html"/> 
+		<img class="nav_img"
+				src="../image/nav_center/agentrecharge.png" alt="">
+				<div class="nav_title">积分商城</div>
+		</a>
+		 <a href="toRepass.html"> <img class="nav_img"
+				src="../image/nav_center/repass.png" alt=""/>
+				<div class="nav_title">修改密码</div>
+		</a>
+		 <a id ="gameRecord" href="toGameRecord.html"> <img class="nav_img"
+				src="../image/nav_center/gameRecord.png" alt=""/>
+				<div class="nav_title">游戏记录</div>
+		</a>
+		 <a id ="toPlayerState" href="toPlayerState.html"> <img class="nav_img"
+				src="../image/nav_center/toPlayerState.png" alt=""/>
+				<div class="nav_title">玩家状态</div>
+		</a>
+		 <a id ="toRetrieveInfo" href="toDisRoomInfo.html"> <img class="nav_img"
+				src="../image/nav_center/disRoomRec.png" alt=""/>
+				<div class="nav_title">解散信息</div>
+		</a>
+	</div>
+	<div id="toTips" class="tips">
+		<span>[攻略]</span><span id="tips" class="first_msg">暂无活动</span><span
+			class="right_icon icon-chevron-right"></span>
+	</div>
+
+</div>
+
+<!-- END CONTAINER -->
+
+<!-- BEGIN FOOTER -->
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="../js/mobile/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+<script src="../js/mobile/jquery-migrate-1.2.1.min.js"
+	type="text/javascript"></script>
+
+<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+<script src="../js/mobile/jquery-ui-1.10.1.custom.min.js"
+	type="text/javascript"></script>
+
+<script src="../js/mobile/bootstrap.min.js" type="text/javascript"></script>
+
+<!--[if lt IE 9]>
+
+	<script src="/resources/js/excanvas.min.js"></script>
+
+	<script src="/resources/js/respond.min.js"></script>
+
+	<![endif]-->
+
+<script src="../js/mobile/jquery.slimscroll.min.js"
+	type="text/javascript"></script>
+
+<script src="../js/mobile/jquery.blockui.min.js" type="text/javascript"></script>
+
+<script src="../js/mobile/jquery.cookie.min.js" type="text/javascript"></script>
+
+<script src="../js/mobile/jquery.uniform.min.js" type="text/javascript"></script>
+
+<script src="../js/mobile/commen/util.js?t=00000000012"
+	type="text/javascript"></script>
+<script src="../js/mobile/bootbox.js" type="text/javascript"></script>
+<!-- <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cspan id='cnzz_stat_icon_1261722399'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261722399%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script> -->
+<style>
+#cnzz_stat_icon_1261722399 {
+	display: none;
+}
+</style>
+<!-- END CORE PLUGINS -->
+
+
+<!-- END FOOTER -->
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+<script type="text/javascript" src="../js/mobile/select2.min.js"></script>
+
+<script type="text/javascript" src="../js/mobile/jquery.dataTables.js"></script>
+
+<script type="text/javascript" src="../js/mobile/DT_bootstrap.js"></script>
+
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+<script src="../js/mobile/app.js"></script>
+
+<script src="../js/mobile/table-editable.js"></script>
+<script src="../js/mobile/jquery.validate.min.js"></script>
+<script>
+	$(document).ready(function() {
+		//认证隐藏或失败特殊功能
+		validateShowOrHide();
+		//暂时增加内容
+		$("#lamp").show();
+		var str = '<p style="color:#808080;">' + '趣友欢乐游戏' + '</p>';
+		$("#marquee").append(str);
+		document.getElementById("marquee").start();
+		//暂时增加内容
+		$("#center_container").css({
+			"padding-top" : $("#logo").height()
+		});
+		//获取代理信息
+		refreshUserInfo(function(time, numOfCards1, numOfCards2, star, parentId, todayCount,lastdayCount,lastweekCount, bonus,person_num) {
+			$('#full-id-field').text(getCookie("uid"));
+			$('#full-name-field').text(getCookie("nickName"));
+			$('#overplus-time').text(time);
+			$('#numof-card-field1').text(numOfCards1);
+			$('#numof-card-field2').text(numOfCards2);
+			$('#todayCount').text(todayCount);
+			$('#lastdayCount').text(lastdayCount);
+			$('#lastweekCount').text(lastweekCount);
+			$('#full-bonus-field').text(bonus);
+			$('#add_person_num').text(person_num);
+			setCookie("cardLCount", numOfCards1);
+			setCookie("cardFCount", numOfCards2);
+			if (star == 0)
+				$('#star-field').text('0星');else {
+				var str = '';
+				for (var i = 0; i < star; i++)
+					str += '★';
+				$('#star-field').text(str);
+			}
+		});
+	});
+</script>
+<script src="../js/mobile/commen/logout.js" type="text/javascript"></script>
+</body>
+
+<!-- END BODY -->
+
+</html>

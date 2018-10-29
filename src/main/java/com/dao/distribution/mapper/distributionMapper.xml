@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.distribution.mapper.DistributionMapper">  
+     <!-- 查找 -->  
+     <select id="findDistributionByID" parameterType="java.util.HashMap" resultMap="DistributionMap">  
+     select* from t_distribution where f_first =#{userId}  or f_second=#{userId} or f_third=#{userId}
+     <if test="startTime!=null">and f_sell_time >= #{startTime}</if>
+		<if test="endTime!=null">and #{endTime} >= f_sell_time</if>
+		order by f_sell_time desc
+		<if test="startIndex!=null">limit #{startIndex},</if>
+		<if test="length!=null">#{length}</if>
+     </select>  
+       
+      <!-- 插入 -->    
+      <!-- useGeneratedKeys设置为"true"表明要MyBatis获取由数据库自动生成的主键；keyProperty="id"指定把获取到的主键值注入到Customer的id属性 -->   
+    <insert id="addDistribution" parameterType="DistributionRecord">    
+        insert into t_distribution (f_first,f_first_name,f_second,f_second_name,f_third,f_third_name,f_bonus1,f_bonus2,f_bonus3,f_sell_card_num,f_seller_name,f_sell_time)   
+        values(#{firstPersonId},#{firstPerson},#{secondPersonId},#{secondPerson},#{thirdPersonId},#{thirdPerson},#{bonus1},#{bonus2},#{bonus3},#{sellCardNum},#{sellerName},#{sellTime})    
+    </insert>    
+    <!-- 修改 -->    
+    <update id="updateDistribution" parameterType="Customer">    
+        update user_info set id = #{userId},name=#{username}=#{password},room_card=#{cardCount},country=#{country},
+        province=#{province}=#{city},sex=#{sex} where id = #{userId}    
+    </update>    
+    
+ <resultMap type="com.pojo.DistributionRecord" id="DistributionMap">
+		<!-- column:对应的列名 property:对应的属性名 -->
+		<result column="f_first_name" property="firstPerson" />
+		<result column="f_second_name" property="secondPerson" />
+		<result column="f_third_name" property="thirdPerson" />
+		<result column="f_bonus1" property="bonus1" />
+		<result column="f_bonus2" property="bonus2" />
+		<result column="f_bonus3" property="bonus3" />
+		<result column="f_sell_card_num" property="sellCardNum" />
+		<result column="f_seller_name" property="sellerName" />
+		<result column="f_sell_time" property="sellTime" />
+	</resultMap>
+ 
+ </mapper>  

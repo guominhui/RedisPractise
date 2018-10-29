@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.gameRecord.mapper.GameRecordMapper">
+	<!-- 查找 -->
+	<select id="findGameRecordByID" parameterType="int" resultMap="GameRecordMap">
+		select* from game_record where room_id =#{roomId} order by create_time desc
+	</select>
+	
+		<!-- 根据房号查找游戏记录 -->
+		<select id="getGameRecords" parameterType="java.util.HashMap"
+			resultMap="GameRecordMap">
+			select* from game_record where room_id =#{RoomId}
+			<if test="startTime!=null or endTime!=null">where</if>
+			<if test="startTime!=null"> f_create_time >= #{startTime}</if>
+			<if test="startTime!=null and endTime!=null">and</if>
+			<if test="endTime!=null"> #{endTime} >= f_create_time</if>
+			order by f_create_time desc
+			<if test="startIndex!=null">limit #{startIndex},</if>
+			<if test="length!=null">#{length}</if>
+		</select>
+		<!-- 根据玩家id查找游戏及记录 -->
+		<select id="getGameRecordsByPlayerId" parameterType="java.util.HashMap"
+			resultMap="GameRecordMap">
+			select* from game_record where  (uid1 =#{playerId} or uid2 =#{playerId}
+			or uid3 =#{playerId} or uid4 =#{playerId} or uid5 =#{playerId}
+			or uid6 =#{playerId} or uid7 =#{playerId}) and result_attr is not null 
+			and result_attr !=''
+			 <if test="startTime!=null or endTime!=null">and</if>
+			<if test="startTime!=null"> create_time >= #{startTime}</if>
+			<if test="startTime!=null and endTime!=null">and</if>
+			<if test="endTime!=null"> #{endTime} >= create_time</if> 
+			order by create_time desc
+			<if test="startIndex!=null">limit #{startIndex},</if>
+			<if test="length!=null">#{length}</if>
+		</select>
+		<resultMap type="com.pojo.GameRecord" id="GameRecordMap">
+			<!-- column:对应的列名 property:对应的属性名 -->
+			<result column="game_uid" property="gameUid" />
+			<result column="room_id" property="roomId" />
+			<result column="game_type" property="gameType" />
+			<result column="create_time" property="createTime" />
+			<result column="nick_name1" property="nickName1" />
+			<result column="nick_name2" property="nickName2" />
+			<result column="nick_name3" property="nickName3" />
+			<result column="nick_name4" property="nickName4" />
+			<result column="nick_name5" property="nickName5" />
+			<result column="nick_name6" property="nickName6" />
+			<result column="nick_name7" property="nickName7" />
+			<result column="uid1" property="uid1" />
+			<result column="uid2" property="uid2" />
+			<result column="uid3" property="uid3" />
+			<result column="uid4" property="uid4" />
+			<result column="uid5" property="uid5" />
+			<result column="uid6" property="uid6" />
+			<result column="uid7" property="uid7" />
+			<result column="result_attr" property="resultAttr" />
+		</resultMap>
+</mapper>

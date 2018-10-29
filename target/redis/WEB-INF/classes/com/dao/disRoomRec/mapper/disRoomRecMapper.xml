@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.disRoomRec.mapper.DisRoomRecMapper">  
+     <!-- 查找 -->  
+     <select id="findDistRoomRecByRoomNo" parameterType="java.util.HashMap" resultMap="DisRoomRecMap">  
+     select* from t_dismiss_room_rec where room_id =#{roomId}
+     </select> 
+       
+   
+    
+ <resultMap type="com.pojo.DisRoomRec" id="DisRoomRecMap">
+		<!-- column:对应的列名 property:对应的属性名 -->
+		<result column="id" property="id" />
+		<result column="game_uid" property="gameUid" />
+		<result column="room_id" property="roomId" />
+		<result column="room_type" property="roomType" />
+		<result column="dismiss_type" property="dismissType" />
+		<result column="owner_id" property="ownerId" />
+		<result column="owner_nick_name" property="ownerNickName" />
+		<result column="dismiss_time" property="dismissTime" />
+	</resultMap>
+ 
+ </mapper>  

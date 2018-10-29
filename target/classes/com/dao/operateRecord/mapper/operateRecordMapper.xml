@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.operateRecord.mapper.OperateRecordMapper">
+	<!-- 查找 -->
+	<select id="findProxyByID" parameterType="int" resultMap="OperateRecordMap">
+		select* from t_opereate_rec where f_rec_id =#{recId}
+	</select>
+	
+		<!-- 插入 -->
+		<!-- useGeneratedKeys设置为"true"表明要MyBatis获取由数据库自动生成的主键；keyProperty="id"指定把获取到的主键值注入到user的id属性 -->
+		<insert id="addOperateRecord" parameterType="OperateRecord" useGeneratedKeys="true"
+			keyProperty="userId" >
+			insert into
+			t_opereate_rec(f_rec_id,f_ope_type,f_ope_user_id,f_be_ope_user_id,f_be_ope_param,f_create_time)
+			values(#{recId},#{opeType},#{opeUserId},#{beOpeUserId},#{beOpeParam},#{createTime})
+		</insert>
+
+		<!-- 按所有时间查找售卡记录 -->
+		<select id="getAllOperateRecords" parameterType="java.util.HashMap"
+			resultMap="OperateRecordMap">
+			select* from t_opereate_rec 
+			<if test="startTime!=null or endTime!=null">where</if>
+			<if test="startTime!=null"> f_create_time >= #{startTime}</if>
+			<if test="startTime!=null and endTime!=null">and</if>
+			<if test="endTime!=null"> #{endTime} >= f_create_time</if>
+			order by f_create_time desc
+			<if test="startIndex!=null">limit #{startIndex},</if>
+			<if test="length!=null">#{length}</if>
+		</select>
+		<!-- 查找买卡记录 -->
+		<select id="getOperateRecords" parameterType="java.util.HashMap"
+			resultMap="OperateRecordMap">
+			select* from t_opereate_rec where f_ope_user_id =#{opeUserId}
+			<if test="startTime!=null or endTime!=null">where</if>
+			<if test="startTime!=null"> f_create_time >= #{startTime}</if>
+			<if test="startTime!=null and endTime!=null">and</if>
+			<if test="endTime!=null"> #{endTime} >= f_create_time</if>
+			order by f_create_time desc
+			<if test="startIndex!=null">limit #{startIndex},</if>
+			<if test="length!=null">#{length}</if>
+		</select>
+		<resultMap type="com.pojo.OperateRecord" id="OperateRecordMap">
+			<!-- column:对应的列名 property:对应的属性名 -->
+			<result column="f_rec_id" property="recId" />
+			<result column="f_ope_type" property="opeType" />
+			<result column="f_ope_user_id" property="opeUserId" />
+			<result column="f_be_ope_user_id" property="beOpeUserId" />
+			<result column="f_be_ope_param" property="beOpeParam" />
+			<result column="f_create_time" property="createTime" />
+		</resultMap>
+</mapper>
